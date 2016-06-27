@@ -48,7 +48,7 @@ Since drush won't site-install on Drupal 6 we've got to go old-school.  Point yo
  
  4. You should now be able to `dsh up` and install drupal as above. 
  
-#### Getting the existing site's dabase 
+#### Getting the legacy site's database 
 
 Current use case uses backupmigrate module, install & enable module on local site. Backup existing site -> Download -> Restore on local
 
