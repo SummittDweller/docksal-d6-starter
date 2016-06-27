@@ -39,13 +39,12 @@ Since drush won't site-install on Drupal 6 we've got to go old-school.  Point yo
 3. Create /sites/default/files and copy existing files if needed
 2. Copy /settings-setup/settings.local.php to /docroot/sites/default/settings.local.php
 3. Edit your settings.php file & add this to the end:
-
-
-    $local_conf_file_path = __DIR__ . '/settings.local.php';
-    if (file_exists($local_conf_file_path)) {
-     require($local_conf_file_path);
-    }
-
+```
+$local_conf_file_path = __DIR__ . '/settings.local.php';
+if (file_exists($local_conf_file_path)) {
+require($local_conf_file_path);
+}
+```
  
 You should now be able to `dsh up` and install drupal as above. 
  
