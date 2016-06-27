@@ -1,7 +1,7 @@
 # drude-d6-starter
-Create a Drupal 6 environment in Drude https://github.com/blinkreaction/drude
+Create a Drupal 6 site in Drude (https://github.com/blinkreaction/drude)
 
-- Current Drupal 6 environment 6.38
+- Current Drupal 6 version 6.38
 - Assumes a working drude environment
 
 ## Instructions - Clean Site
