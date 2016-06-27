@@ -87,4 +87,6 @@ All our D6 sites use the backupmigrate module. We just install & enable module o
 #### Legacy Site GIT issues
 If you pulled your legacy site into /docroot you now have a git project in a git project. You may want to add /docroot to the .gitignore of the drude-d6-starter project. If you love pain and mental anquish you can do something with git submodules.  
  
+## What's next?
 
+This project just begs for an init script. A normal drude init can re-provision the whole machine. Since `drush site-install` doesn't work in d6 there's still going to be a manual install, but post install there's a ton of repetitive stuff that gets done on a migration-source site. If anybody has any bright ideas...
