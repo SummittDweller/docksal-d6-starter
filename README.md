@@ -5,7 +5,7 @@ Create a Drupal 6 environment in Drude https://github.com/blinkreaction/drude
 - Assumes a working drude environment
 
 ## Instructions - Clean Site
-Instructions for creating "my-drupal6-site" on Windows using babun
+Instructions for creating "my-drupal6-site.drude" on Windows using babun
 
 ####First get the files and get docker-compose.yml configured:
 
