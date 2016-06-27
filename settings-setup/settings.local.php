@@ -1,17 +1,20 @@
 <?php
 
+#######################
+# Add this to the end of your settings.php
+# and copy this file to /site/default
+#
+# Load local settings file if it exists.
+# $local_conf_file_path = __DIR__ . '/settings.local.php';
+# if (file_exists($local_conf_file_path)) {
+#   require($local_conf_file_path);
+# }
+########################
+
+
 # in your PHP code:
 ini_set('display_errors', '0');     # don't show any errors...
 error_reporting(E_ALL | E_STRICT);  # ...but do log them
-
-# Docker DB connection settings.
-#$databases['default']['default'] = array (
-#  'database' => getenv('DB_1_ENV_MYSQL_DATABASE'),
-#  'username' => getenv('DB_1_ENV_MYSQL_USER'),
-#  'password' => getenv('DB_1_ENV_MYSQL_PASSWORD'),
-#  'host' => getenv('DB_1_PORT_3306_TCP_ADDR'),
-#  'driver' => 'mysql',
-#);
 
 $database =  getenv('DB_1_ENV_MYSQL_DATABASE');
 $username =  getenv('DB_1_ENV_MYSQL_USER');
