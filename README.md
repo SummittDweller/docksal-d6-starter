@@ -44,8 +44,8 @@ Instructions for creating "my-drupal6-site.drude" on Windows using babun
 ####First get the files and get docker-compose.yml configured:
 
     cd /c/projects
-    mkdir my-drupal7-site
-    cd my-drupal7-site
+    mkdir my-drupal6-site
+    cd my-drupal6-site
     git clone https://github.com/davekopecek/drude-d6-starter.git .
     # Set the DOMAIN_NAME in docker-compose.yml Use your favorite editor or SED:
     sed -i 's/drude-d6-starter/my-drupal6-site/' docker-compose.yml
