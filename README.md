@@ -70,6 +70,9 @@ Since drush won't site-install on Drupal 6 we've got to go old-school.  Point yo
 2. Remove the existing contents of /docroot and replace with your D6 project. You can cd to docroot and `git pull` your legacy project into /docroot 
 3. Create /sites/default/files and copy existing files if needed
 2. Copy /settings-setup/settings.local.php to /docroot/sites/default/settings.local.php
+```
+cp settings-setup/settings.local.php ./docroot/sites/default/settings.local.php
+```
 3. Edit your settings.php file & add this to the end:
 ```
 $local_conf_file_path = __DIR__ . '/settings.local.php';
