@@ -7,7 +7,7 @@ Create a Drupal 6 site in Drude (https://github.com/blinkreaction/drude)
 
 ## Why do I need this? What does it do?
 
-The Drude Project currently has example projects for Drupal 7 and Drupal 8 located [here](https://github.com/blinkreaction/drude), but Drupal 6 is missing. If you're involved in D6 to D7 migrations this project will allow you to easily configure and run multiple D6 projects side-by-side on your system with D7 and D8 projects. Through the magic that is Drude / Vagrant / Docker / VirtualBox all your environments are separate.
+The Drude Project currently has example projects for Drupal 7 and Drupal 8 located [here](https://github.com/blinkreaction/drude), but Drupal 6 is missing. If you're involved in D6 migrations this project will allow you to easily configure and run multiple D6 projects side-by-side on your system with D7 and D8 projects. Through the magic that is Drude / Vagrant / Docker / VirtualBox all your environments are separate.
 
 ### The Nitty Gritty
 
