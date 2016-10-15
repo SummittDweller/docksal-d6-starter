@@ -19,7 +19,7 @@ web:
   environment:
     # This is the only line you need to edit here (i.e. my-drupal6-site.drude )
     # Then edit your HOSTS FILE ( add 192.168.10.10  my-drupal6-site.drude )
-    - VIRTUAL_HOST=drude-d6-starter.drude
+    - VIRTUAL_HOST=drupal6.docksal
 
 # DB node
 db:
