@@ -36,16 +36,7 @@ $db_url = "mysql://user:user@db/default";
 ## Instructions - Create a New Clean Drupal 6 Site
 Instructions for creating "drupal6.docksal" on Windows using babun
 
-####First get the files and get docker-compose.yml configured:
-
-    cd /c/projects
-    mkdir drupal6
-    cd drupal6
-    git clone https://github.com/davekopecek/docksal-d6-starter.git .
-    # Set the DOMAIN_NAME in docker-compose.yml Use your favorite editor or SED:
-    # sed -i 's/drupal6/myproject/' docker-compose.yml
-
-####Next add the domain to your local machine's HOSTS file:
+####Add the domain to your local machine's HOSTS file:
 
     192.168.64.100   drupal6.docksal
 
@@ -53,7 +44,7 @@ Instructions for creating "drupal6.docksal" on Windows using babun
 
     fin up
 
-####Finally - Install Drupal from Scratch
+#####Install Drupal from Scratch
 
 Since drush won't site-install on Drupal 6 we've got to go old-school.  Point your browser to `http://your-drupal6-site.drush/install.php` and party like it's 2008
 
@@ -65,6 +56,15 @@ A D6 backup is provided in the `/data` directory. This backup was created with `
     fin slb
 ````
 
+#####Optionally modify your project VIRTUAL_HOST and SITE_DOMAIN
+
+Edit VIRTUAL_HOST and SITE_DOMAIN in ./docksal/docksal.env to customize local url:
+
+````
+    # Set the VIRTUAL_HOST and SITE_DOMAIN in ./docksal/docksal.env Use your favorite editor or SED:
+    # To create myproject.docksal
+    # sed -i 's/drupal6/myproject/' docksal.env
+````
 
 ## Instructions - Pull an existing Drupal 6 site into Docksal.
 
