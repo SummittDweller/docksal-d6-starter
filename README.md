@@ -12,7 +12,7 @@ The Docksal Project currently has example projects for Drupal 7 and Drupal 8 loc
 
 The stock Docksal environment only needs a couple of tweaks to run D6. Here's what we did:
 
-#### Customizations to .docksal/etc/php5/php.ini
+#### Customizations to .docksal/etc/php/php.ini
 
 Mbstring needed some tweaking. This was added:
 ```
@@ -22,19 +22,15 @@ mbstring.internal_encoding = pass
 ```
 #### settings.local.php file added
 
-A settings.local.php file was added, and code was added to settings.php to call it. In addition to the standard things that are done in the blinkreaction local settings sample file we tune down error_reporting and adjust the $db_url to use docksal environment variables for the db and db credentials:
+A settings.local.php file was added, and code was added to settings.php to call it. In addition to the standard things that are done in the blinkreaction local settings sample file we tune down error_reporting and adjust the $db_url to use docksal environment variables for the db credentials:
 
 ```
 # in your PHP code:
 ini_set('display_errors', '0');     # don't show any errors...
 error_reporting(E_ALL | E_STRICT);  # ...but do log them
 
-$database =  getenv('DB_1_ENV_MYSQL_DATABASE');
-$username =  getenv('DB_1_ENV_MYSQL_USER');
-$password = getenv('DB_1_ENV_MYSQL_PASSWORD');
-$host = getenv('DB_1_PORT_3306_TCP_ADDR');
-
-$db_url = "mysql://$username:$password@$host/$database";
+# Docker DB connection settings.
+$db_url = "mysql://user:user@db/default";
 ```
 
 ## Instructions - Create a New Clean Drupal 6 Site
@@ -57,9 +53,18 @@ Instructions for creating "drupal6.docksal" on Windows using babun
 
     fin up
 
-####Finally - Install Drupal
+####Finally - Install Drupal from Scratch
 
 Since drush won't site-install on Drupal 6 we've got to go old-school.  Point your browser to `http://your-drupal6-site.drush/install.php` and party like it's 2008
+
+#####...Or Install from Back
+
+A D6 backup is provided in the `/data` directory. This backup was created with `fin bs` (BackStop Command ) Restore using `fin slb` (Start from last backup):
+
+````
+    fin slb
+````
+
 
 ## Instructions - Pull an existing Drupal 6 site into Docksal.
 
