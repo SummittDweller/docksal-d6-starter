@@ -2,7 +2,6 @@
 Create a Drupal 6 site in Docksal (https://github.com/docksal/docksal)
 
 - Current Drupal 6 version 6.38
-- Assumes a working docksal environment
 - Use case: Migrating D6 sites to D8
 
 ## Why do I need this? What does it do?

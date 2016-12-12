@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+## Print the URL of the current project http://VIRTUAL_HOST
+## Usage:   fin vhost
+## Parameters:
+##      none
+
+echo http://$VIRTUAL_HOST

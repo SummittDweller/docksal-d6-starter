@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+## Happy Admin - Reset admin password to happy123. 
+## Who can remember what `drush site-install` created? 
+## Usage: fin ha
+## Parameters:
+##      none
+
+fin drush upwd admin --password="happy123"

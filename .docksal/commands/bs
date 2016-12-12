@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+## Backup default database and stop project services.  
+## Usage:   fin bs
+## Parameters:
+##      none
+## Results:
+##      Creates /project-dir/data if it doesn't exist
+##      Backs up database to /project-dir/data/default-mm-dd-yy-HHMMSS.sql
+##      Stop project services
+
+BACKUP_PATH="${PROJECT_ROOT}/data"
+BACKUP_FILE="${BACKUP_PATH}/default-$(date +%F-%H%M%S).sql"
+
+if [ ! -d "${BACKUP_PATH}" ]; then
+  echo create backup directory $BACKUP_PATH
+  mkdir "${BACKUP_PATH}"
+  ls -al ..
+fi
+
+fin sqld default "${BACKUP_FILE}"
+fin stop

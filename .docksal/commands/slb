@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+## Start project services and restore from last backup
+## Usage:  fin slb
+## Parameters:
+##      none
+## Results:
+##      start project containers
+##      restore last backup created with bs command from /project-dir/data/
+
+BACKUP_PATH="${PROJECT_ROOT}/data"
+
+if [ -d "${BACKUP_PATH}" ]; then
+
+  if [ -z "$(find $BACKUP_PATH -maxdepth 1 -name 'default*' -print -quit)" ]; then
+    echo not found
+  else
+    BACKUP_FILE=$(ls -t ${BACKUP_PATH}/default*.sql | head -1)
+    fin start
+    fin sqli default "${BACKUP_FILE}"
+  fi
+
+else
+  echo Backup path: "${BACKUP_PATH}" not found
+fi
+
+
+
