@@ -8,6 +8,11 @@ Create a Drupal 6 site in Docksal (https://github.com/docksal/docksal)
 
 The Docksal Project currently has example projects for Drupal 7 and Drupal 8 located [here](https://github.com/docksal/docksal, but Drupal 6 is missing. If you're involved in D6 migrations this project will allow you to easily configure and run multiple D6 projects side-by-side on your system with D7 and D8 projects. Through the magic that is Docksal / Docker / VirtualBox all your environments are separate.
 
+### It's not perfect
+
+This uses docksal/cli:1.0-php5 & runs on php 5.6.27.  Some Drupal 6 modules will scream bloody murder on
+5.6, but sites will run.  If anybody has an easy way to get an earlier php version runnig ( I'd love 5.3.3) I'd love to hear it.
+
 ### The Nitty Gritty
 
 The stock Docksal environment only needs a couple of tweaks to run D6. Here's what we did:
@@ -86,6 +91,15 @@ require($local_conf_file_path);
 ```
 
 You should now be able to `dsh up` and install drupal as above.
+
+#### Running Side by Side with Drupal 8
+
+We created this for D6 -> D8 upgrades
+Add .docksal/docksal-local.env to expose mysql to your Drupal 8 instance. Pick your favorite port:
+
+````
+MYSQL_PORT='33061:3306'
+````
 
 #### Getting the legacy site's database
 
